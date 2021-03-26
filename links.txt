@@ -1,0 +1,33 @@
+- https://joachim8675309.medium.com/jenkins-environment-using-docker-6a12603ebf9
+- https://secops-sandbox-documentation.readthedocs.io/en/latest/jenkins_setup.html
+- https://github.com/Shimmi/docker-jenkins
+- https://github.com/kzap/jenkins-blue-ocean-docker
+- https://www.jenkins.io/doc/book/installing/docker/
+- https://hub.docker.com/r/jenkinsci/blueocean/
+- https://www.jenkins.io/doc/book/blueocean/getting-started/#as-part-of-jenkins-in-docker
+- https://medium.com/@haikulab/running-jenkins-blueocean-using-docker-755ecc89e6c2
+- https://www.jenkins.io/
+- 
+
+## plugins
+
+- https://www.jrebel.com/blog/top-10-jenkins-plugins-and-features
+- https://caylent.com/jenkins-plugins-updated-2020
+- https://www.jenkins.io/doc/book/pipeline/docker/
+- 
+
+## create your own personalized dockerfile
+
+- https://www.digitalocean.com/community/tutorials/how-to-automate-jenkins-setup-with-docker-and-jenkins-configuration-as-code
+- https://dev.to/rubiin/custom-jenkins-images-with-plugins-pre-installed-1pok
+- https://medium.com/@vinothkumar.p/jenkins-docker-image-with-pre-installed-plugins-152f5fa23a98
+- 
+
+## nodejs jenkins
+
+- https://omarghader.github.io/jenkins-nodejs-configuration/#:~:text=When%20jenkins%20is%20ready%2C%20go,the%20%E2%80%9Cautomatic%20installation%E2%80%9D%20checkbox.
+
+## jenkins jdk
+
+- https://mydeveloperplanet.com/2019/01/30/setup-jenkins-ci-in-30-minutes/
+- 

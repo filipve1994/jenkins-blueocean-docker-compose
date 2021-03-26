@@ -1,0 +1,54 @@
+version: "3"
+
+services:
+  jenkinsblueocean:
+    container_name: "Jenkins_BlueOcean"
+    image: "jenkinsci/blueocean:latest"
+    user: root
+    ports:
+      #- "${JENKINS_HTTP_PORT}:8080"
+      #- "${JENKINS_HTTPS_PORT}:8443"
+      - "8080:8080"
+      - "8443:8443"
+      - "50000:50000"
+    volumes:
+      - "./jenkins_data:/var/jenkins_home"
+      #- "jenkins_data:/var/jenkins_home"
+      - "./jenkins_downloads:/var/jenkins_home/downloads"
+      #- "jenkins_downloads:/var/jenkins_home/downloads"
+      - "../javasamplesforjenkins:/home"
+      - jenkins-docker-certs:/certs/client:ro
+    environment:
+      #### WINDOWS ONLY ####
+      - DOCKER_HOST=tcp://host.docker.internal:2375
+      - "JENKINS_OPTS=--httpPort=8080 --httpsPort=8443"
+      - DOCKER_CERT_PATH=/certs/client
+      - DOCKER_TLS_VERIFY=1
+      - DOCKER_HOST=tcp://docker:2376
+    networks:
+      - jenkins
+
+  jenkins-docker:
+    container_name: "jenkins-docker"
+    image: "docker:dind"
+    user: root
+    volumes:
+      - "jenkins-docker-certs:/certs/client"
+      - "jenkins-data:/var/jenkins_home"
+    environment:
+      - DOCKER_TLS_CERTDIR=/certs
+    networks:
+      - jenkins
+
+networks:
+  jenkins: {}
+
+volumes:
+  jenkins_data:
+    driver: local
+  jenkins_downloads:
+    driver: local
+  jenkins-docker-certs:
+    driver: local
+  jenkins-data:
+    driver: local
